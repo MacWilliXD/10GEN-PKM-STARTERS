@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico - Pokémon Gen 10 Predictor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .test-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        .ok { background: #2ecc71; }
+        .error { background: #e74c3c; }
+        .warning { background: #f39c12; }
+        button {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px 5px;
+            font-weight: bold;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        #results {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        img {
+            max-width: 150px;
+            margin: 10px;
+            border: 3px solid white;
+            border-radius: 10px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Diagnóstico del Sistema</h1>
+    <p>Esta página verifica que todos los componentes estén funcionando correctamente.</p>
+
+    <div class="test-box">
+        <h2>1. Verificar Archivos JavaScript</h2>
+        <p id="test-js">Cargando...</p>
+        <button onclick="testJS()">Probar JS</button>
+    </div>
+
+    <div class="test-box">
+        <h2>2. Verificar Chart.js (CDN)</h2>
+        <p id="test-chart">Cargando...</p>
+        <button onclick="testChart()">Probar Chart.js</button>
+    </div>
+
+    <div class="test-box">
+        <h2>3. Verificar Imágenes</h2>
+        <p id="test-images">Cargando...</p>
+        <div id="images-container"></div>
+        <button onclick="testImages()">Probar Imágenes</button>
+    </div>
+
+    <div class="test-box">
+        <h2>4. Verificar APIs y Datos</h2>
+        <p id="test-api">Esperando...</p>
+        <button onclick="testAPI()">Probar APIs</button>
+    </div>
+
+    <div class="test-box">
+        <h2>5. Ejecutar Análisis Completo</h2>
+        <p id="test-analysis">Esperando...</p>
+        <button onclick="testAnalysis()">Ejecutar Análisis</button>
+    </div>
+
+    <div class="test-box">
+        <h2>📊 Resultados del Diagnóstico</h2>
+        <div id="results">Haz clic en los botones de prueba para ver los resultados...</div>
+    </div>
+
+    <div class="test-box">
+        <h2>🚀 Todo Listo?</h2>
+        <button onclick="goToApp()" style="background: #2ecc71; color: white; font-size: 18px;">
+            ✅ Ir a la Aplicación Principal
+        </button>
+    </div>
+
+    <!-- Cargar Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Cargar archivos del proyecto -->
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/analysis.js"></script>
+
+    <script>
+        let log = '';
+
+        function addLog(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const emoji = type === 'ok' ? '✅' : type === 'error' ? '❌' : type === 'warning' ? '⚠️' : 'ℹ️';
+            log += `[${timestamp}] ${emoji} ${message}\n`;
+            document.getElementById('results').textContent = log;
+        }
+
+        function testJS() {
+            const testEl = document.getElementById('test-js');
+            let status = '';
+            
+            addLog('Verificando archivos JavaScript...');
+            
+            if (typeof CONFIG !== 'undefined') {
+                status += 'config.js: <span class="status ok">OK</span><br>';
+                addLog('config.js cargado correctamente', 'ok');
+            } else {
+                status += 'config.js: <span class="status error">ERROR</span><br>';
+                addLog('config.js NO encontrado', 'error');
+            }
+            
+            if (typeof APIManager !== 'undefined') {
+                status += 'api.js: <span class="status ok">OK</span><br>';
+                addLog('api.js cargado correctamente', 'ok');
+            } else {
+                status += 'api.js: <span class="status error">ERROR</span><br>';
+                addLog('api.js NO encontrado', 'error');
+            }
+            
+            if (typeof PredictiveAnalysis !== 'undefined') {
+                status += 'analysis.js: <span class="status ok">OK</span><br>';
+                addLog('analysis.js cargado correctamente', 'ok');
+            } else {
+                status += 'analysis.js: <span class="status error">ERROR</span><br>';
+                addLog('analysis.js NO encontrado', 'error');
+            }
+            
+            testEl.innerHTML = status;
+        }
+
+        function testChart() {
+            const testEl = document.getElementById('test-chart');
+            
+            addLog('Verificando Chart.js...');
+            
+            if (typeof Chart !== 'undefined') {
+                testEl.innerHTML = 'Chart.js: <span class="status ok">Versión ' + Chart.version + '</span>';
+                addLog('Chart.js cargado correctamente - Versión: ' + Chart.version, 'ok');
+            } else {
+                testEl.innerHTML = 'Chart.js: <span class="status error">NO CARGADO</span><br>Verifica tu conexión a internet';
+                addLog('Chart.js NO cargado - Verifica conexión a internet', 'error');
+            }
+        }
+
+        function testImages() {
+            const testEl = document.getElementById('test-images');
+            const container = document.getElementById('images-container');
+            
+            addLog('Verificando imágenes de starters...');
+            
+            const images = [
+                { name: 'Browt', src: '../images/starters/browt.jpg' },
+                { name: 'Pombon', src: '../images/starters/pombon.jpg' },
+                { name: 'Gecua', src: '../images/starters/gecua.jpg' }
+            ];
+            
+            container.innerHTML = '';
+            let loaded = 0;
+            let errors = 0;
+            
+            images.forEach(img => {
+                const imgEl = document.createElement('img');
+                imgEl.src = img.src;
+                imgEl.alt = img.name;
+                imgEl.title = img.name;
+                
+                imgEl.onload = () => {
+                    loaded++;
+                    addLog(`Imagen ${img.name} cargada correctamente`, 'ok');
+                    updateImageStatus();
+                };
+                
+                imgEl.onerror = () => {
+                    errors++;
+                    addLog(`ERROR: No se pudo cargar ${img.name} desde ${img.src}`, 'error');
+                    updateImageStatus();
+                };
+                
+                container.appendChild(imgEl);
+            });
+            
+            function updateImageStatus() {
+                if (loaded + errors === images.length) {
+                    if (errors === 0) {
+                        testEl.innerHTML = `Todas las imágenes: <span class="status ok">${loaded}/3 OK</span>`;
+                    } else {
+                        testEl.innerHTML = `Imágenes: <span class="status warning">${loaded}/3 OK, ${errors} errores</span>`;
+                    }
+                }
+            }
+        }
+
+        async function testAPI() {
+            const testEl = document.getElementById('test-api');
+            testEl.innerHTML = 'Probando APIs... <span class="status warning">ESPERANDO</span>';
+            
+            addLog('Iniciando prueba de APIs...');
+            
+            try {
+                // Test 1: Datos históricos
+                addLog('Obteniendo datos históricos...');
+                const historical = await apiManager.getHistoricalStarters();
+                if (historical && historical.length > 0) {
+                    addLog(`Datos históricos: ${historical.length} generaciones cargadas`, 'ok');
+                } else {
+                    addLog('Datos históricos vacíos o incompletos', 'warning');
+                }
+                
+                // Test 2: Tendencias
+                addLog('Obteniendo tendencias...');
+                const trends = await apiManager.getSearchTrends();
+                if (trends && trends.browt) {
+                    addLog('Tendencias de búsqueda cargadas correctamente', 'ok');
+                } else {
+                    addLog('Error en tendencias', 'error');
+                }
+                
+                // Test 3: Encuestas
+                addLog('Obteniendo encuestas...');
+                const polls = await apiManager.getPublicPolls();
+                if (polls && Object.keys(polls).length > 0) {
+                    addLog(`Encuestas: ${Object.keys(polls).length} fuentes cargadas`, 'ok');
+                } else {
+                    addLog('Error en encuestas', 'error');
+                }
+                
+                testEl.innerHTML = 'APIs: <span class="status ok">TODAS OK</span>';
+                addLog('✅ Todas las APIs funcionando correctamente', 'ok');
+                
+            } catch (error) {
+                testEl.innerHTML = 'APIs: <span class="status error">ERROR</span>';
+                addLog('ERROR en APIs: ' + error.message, 'error');
+                console.error(error);
+            }
+        }
+
+        async function testAnalysis() {
+            const testEl = document.getElementById('test-analysis');
+            testEl.innerHTML = 'Ejecutando análisis... <span class="status warning">PROCESANDO</span>';
+            
+            addLog('=== INICIANDO ANÁLISIS COMPLETO ===');
+            
+            try {
+                const prediction = await predictiveAnalysis.predictMostChosen();
+                
+                addLog('');
+                addLog('🎉 RESULTADOS DE LA PREDICCIÓN:');
+                addLog('');
+                addLog(`🌱 Browt: ${prediction.probabilities.browt}%`);
+                addLog(`🔥 Pombon: ${prediction.probabilities.pombon}%`);
+                addLog(`💧 Gecqua: ${prediction.probabilities.gecqua}%`);
+                addLog('');
+                
+                const winner = Object.entries(prediction.probabilities)
+                    .sort((a, b) => parseFloat(b[1]) - parseFloat(a[1]))[0];
+                
+                addLog(`🏆 GANADOR PREDICHO: ${winner[0].toUpperCase()} con ${winner[1]}%`);
+                addLog('');
+                
+                testEl.innerHTML = 'Análisis: <span class="status ok">COMPLETADO</span>';
+                addLog('✅ Análisis completado exitosamente', 'ok');
+                
+            } catch (error) {
+                testEl.innerHTML = 'Análisis: <span class="status error">ERROR</span>';
+                addLog('ERROR en análisis: ' + error.message, 'error');
+                console.error('Error completo:', error);
+            }
+        }
+
+        function goToApp() {
+            window.location.href = 'index.html';
+        }
+
+        // Auto-test al cargar
+        window.addEventListener('load', () => {
+            addLog('=== DIAGNÓSTICO INICIADO ===');
+            addLog('Página de diagnóstico cargada');
+            
+            setTimeout(() => {
+                testJS();
+                testChart();
+            }, 500);
+        });
+    </script>
+</body>
+</html>

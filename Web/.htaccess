@@ -1,0 +1,76 @@
+# Habilitar reescritura de URLs (si se necesita en el futuro)
+# RewriteEngine On
+
+# Configuración de CORS para permitir acceso desde localhost
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
+# Configuración de caché para archivos estáticos
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Imágenes - 1 mes
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    
+    # CSS y JavaScript - 1 semana
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    
+    # HTML - sin caché (para desarrollo)
+    ExpiresByType text/html "access plus 0 seconds"
+    
+    # JSON - 1 hora
+    ExpiresByType application/json "access plus 1 hour"
+</IfModule>
+
+# Compresión GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+</IfModule>
+
+# Prevenir acceso directo a archivos de configuración
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevenir listado de directorios
+Options -Indexes
+
+# Configuración de errores personalizados (opcional)
+# ErrorDocument 404 /404.html
+# ErrorDocument 500 /500.html
+
+# Configuración de PHP (si es necesario)
+<IfModule mod_php7.c>
+    php_flag display_errors Off
+    php_flag log_errors On
+    php_value error_log /xampp/apache/logs/php_errors.log
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
+</IfModule>
+
+# Seguridad: Prevenir acceso a archivos sensibles
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# UTF-8 encoding por defecto
+AddDefaultCharset UTF-8
+
+# Tipos MIME adicionales
+AddType application/json .json
+AddType application/javascript .js
+AddType text/css .css

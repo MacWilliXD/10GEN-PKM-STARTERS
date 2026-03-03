@@ -1,0 +1,61 @@
+{
+    "twitter": {
+        "source": "Twitter\/X @PokemonCommunity",
+        "totalVotes": 45230,
+        "results": {
+            "browt": 28,
+            "pombon": 42,
+            "gecqua": 30
+        },
+        "date": "2026-02-15",
+        "url": "https:\/\/twitter.com\/example"
+    },
+    "reddit": {
+        "source": "r\/pokemon Megapoll",
+        "totalVotes": 32140,
+        "results": {
+            "browt": 25,
+            "pombon": 38,
+            "gecqua": 37
+        },
+        "date": "2026-02-20",
+        "url": "https:\/\/reddit.com\/r\/pokemon"
+    },
+    "youtube": {
+        "source": "Pok\u00e9Tubers Community Survey",
+        "totalVotes": 28560,
+        "results": {
+            "browt": 30,
+            "pombon": 40,
+            "gecqua": 30
+        },
+        "date": "2026-02-25",
+        "influencers": [
+            "Verlisify",
+            "Pok\u00e9mon Challenges",
+            "Austin John Plays"
+        ]
+    },
+    "serebii": {
+        "source": "Serebii.net Official Poll",
+        "totalVotes": 25890,
+        "results": {
+            "browt": 22,
+            "pombon": 45,
+            "gecqua": 33
+        },
+        "date": "2026-02-28",
+        "url": "https:\/\/serebii.net"
+    },
+    "bulbapedia": {
+        "source": "Bulbapedia Community",
+        "totalVotes": 18340,
+        "results": {
+            "browt": 27,
+            "pombon": 39,
+            "gecqua": 34
+        },
+        "date": "2026-03-01",
+        "url": "https:\/\/bulbapedia.bulbagarden.net"
+    }
+}

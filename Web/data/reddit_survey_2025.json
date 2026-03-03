@@ -1,0 +1,122 @@
+{
+  "surveyInfo": {
+    "source": "Reddit - Sparklez Squad 2025 Pokemon Survey",
+    "totalVotes": 26407,
+    "date": "2025",
+    "reliable": true
+  },
+  "startersByGeneration": {
+    "gen1": {
+      "generation": "Gen I (Kanto)",
+      "grass": { "name": "Bulbasaur", "dex": 1, "votes": 207, "percentage": 55.05 },
+      "fire": { "name": "Charmander", "dex": 4, "votes": 54, "percentage": 14.36 },
+      "water": { "name": "Squirtle", "dex": 7, "votes": 115, "percentage": 30.59 },
+      "totalVotes": 376,
+      "winner": "grass"
+    },
+    "gen2": {
+      "generation": "Gen II (Johto)",
+      "grass": { "name": "Chikorita", "dex": 152, "votes": 60, "percentage": 22.99 },
+      "fire": { "name": "Cyndaquil", "dex": 155, "votes": 105, "percentage": 40.23 },
+      "water": { "name": "Totodile", "dex": 158, "votes": 96, "percentage": 36.78 },
+      "totalVotes": 261,
+      "winner": "fire"
+    },
+    "gen3": {
+      "generation": "Gen III (Hoenn)",
+      "grass": { "name": "Treecko", "dex": 252, "votes": 35, "percentage": 10.84 },
+      "fire": { "name": "Torchic", "dex": 255, "votes": 52, "percentage": 16.10 },
+      "water": { "name": "Mudkip", "dex": 258, "votes": 236, "percentage": 73.06 },
+      "totalVotes": 323,
+      "winner": "water"
+    },
+    "gen4": {
+      "generation": "Gen IV (Sinnoh)",
+      "grass": { "name": "Turtwig", "dex": 387, "votes": 57, "percentage": 20.14 },
+      "fire": { "name": "Chimchar", "dex": 390, "votes": 27, "percentage": 9.54 },
+      "water": { "name": "Piplup", "dex": 393, "votes": 199, "percentage": 70.32 },
+      "totalVotes": 283,
+      "winner": "water"
+    },
+    "gen5": {
+      "generation": "Gen V (Unova)",
+      "grass": { "name": "Snivy", "dex": 495, "votes": 50, "percentage": 18.25 },
+      "fire": { "name": "Tepig", "dex": 498, "votes": 42, "percentage": 15.33 },
+      "water": { "name": "Oshawott", "dex": 501, "votes": 181, "percentage": 66.42 },
+      "totalVotes": 273,
+      "winner": "water"
+    },
+    "gen6": {
+      "generation": "Gen VI (Kalos)",
+      "grass": { "name": "Chespin", "dex": 650, "votes": 23, "percentage": 31.08 },
+      "fire": { "name": "Fennekin", "dex": 653, "votes": 36, "percentage": 48.65 },
+      "water": { "name": "Froakie", "dex": 656, "votes": 15, "percentage": 20.27 },
+      "totalVotes": 74,
+      "winner": "fire"
+    },
+    "gen7": {
+      "generation": "Gen VII (Alola)",
+      "grass": { "name": "Rowlet", "dex": 722, "votes": 149, "percentage": 61.07 },
+      "fire": { "name": "Litten", "dex": 725, "votes": 51, "percentage": 20.90 },
+      "water": { "name": "Popplio", "dex": 728, "votes": 44, "percentage": 18.03 },
+      "totalVotes": 244,
+      "winner": "grass"
+    },
+    "gen8": {
+      "generation": "Gen VIII (Galar/Hisui)",
+      "grass": { "name": "Grookey", "dex": 810, "votes": 15, "percentage": 17.44 },
+      "fire": { "name": "Scorbunny", "dex": 813, "votes": 46, "percentage": 53.49 },
+      "water": { "name": "Sobble", "dex": 816, "votes": 25, "percentage": 29.07 },
+      "totalVotes": 86,
+      "winner": "fire"
+    },
+    "gen9": {
+      "generation": "Gen IX (Paldea)",
+      "grass": { "name": "Sprigatito", "dex": 906, "votes": 52, "percentage": 40.63 },
+      "fire": { "name": "Fuecoco", "dex": 909, "votes": 58, "percentage": 45.31 },
+      "water": { "name": "Quaxly", "dex": 912, "votes": 18, "percentage": 14.06 },
+      "totalVotes": 128,
+      "winner": "fire",
+      "note": "Fuecoco won with strong Fire-type preference"
+    }
+  },
+  "starterRankingsOverall": [
+    { "rank": 1, "name": "Mudkip", "type": "water", "generation": 3, "votes": 236 },
+    { "rank": 2, "name": "Bulbasaur", "type": "grass", "generation": 1, "votes": 207 },
+    { "rank": 3, "name": "Piplup", "type": "water", "generation": 4, "votes": 199 },
+    { "rank": 4, "name": "Oshawott", "type": "water", "generation": 5, "votes": 181 },
+    { "rank": 5, "name": "Rowlet", "type": "grass", "generation": 7, "votes": 149 },
+    { "rank": 6, "name": "Squirtle", "type": "water", "generation": 1, "votes": 115 },
+    { "rank": 7, "name": "Cyndaquil", "type": "fire", "generation": 2, "votes": 105 },
+    { "rank": 8, "name": "Totodile", "type": "water", "generation": 2, "votes": 96 },
+    { "rank": 9, "name": "Chikorita", "type": "grass", "generation": 2, "votes": 60 },
+    { "rank": 10, "name": "Fuecoco", "type": "fire", "generation": 9, "votes": 58 }
+  ],
+  "typeWinStatistics": {
+    "fire": {
+      "wins": 3,
+      "generations": [2, 6, 8, 9],
+      "totalVotes": 362,
+      "percentage": 33.33
+    },
+    "water": {
+      "wins": 4,
+      "generations": [3, 4, 5],
+      "totalVotes": 827,
+      "percentage": 44.44
+    },
+    "grass": {
+      "wins": 2,
+      "generations": [1, 7],
+      "totalVotes": 593,
+      "percentage": 22.22
+    }
+  },
+  "insights": {
+    "waterDominance": "Water-type starters dominate the top rankings with 4 out of top 6 being Water",
+    "muddyTrend": "Mudkip is the most popular starter with 236 votes, far ahead of others",
+    "gen9Pattern": "In Gen 9, Fire-type (Fuecoco) narrowly won over Grass (Sprigatito), with Water (Quaxly) significantly behind",
+    "totalStarterVotes": 1920,
+    "averageVotesPerStarter": 71.11
+  }
+}

@@ -1,0 +1,335 @@
+[
+  {
+    "generation": 1,
+    "region": "Kanto",
+    "year": 1996,
+    "games": ["Red", "Blue", "Yellow"],
+    "starters": [
+      {
+        "name": "Bulbasaur",
+        "type": "grass",
+        "number": 1,
+        "popularity": 25,
+        "inspiration": "Frog + Bulb Plant",
+        "finalEvolution": "Venusaur",
+        "culturalImpact": "Medium"
+      },
+      {
+        "name": "Charmander",
+        "type": "fire",
+        "number": 4,
+        "popularity": 45,
+        "inspiration": "Salamander",
+        "finalEvolution": "Charizard",
+        "culturalImpact": "Very High"
+      },
+      {
+        "name": "Squirtle",
+        "type": "water",
+        "number": 7,
+        "popularity": 30,
+        "inspiration": "Turtle",
+        "finalEvolution": "Blastoise",
+        "culturalImpact": "High"
+      }
+    ],
+    "mostChosen": "fire",
+    "winnerPopularity": 45
+  },
+  {
+    "generation": 2,
+    "region": "Johto",
+    "year": 1999,
+    "games": ["Gold", "Silver", "Crystal"],
+    "starters": [
+      {
+        "name": "Chikorita",
+        "type": "grass",
+        "number": 152,
+        "popularity": 18,
+        "inspiration": "Pear + Sauropod",
+        "finalEvolution": "Meganium",
+        "culturalImpact": "Low"
+      },
+      {
+        "name": "Cyndaquil",
+        "type": "fire",
+        "number": 155,
+        "popularity": 42,
+        "inspiration": "Echidna",
+        "finalEvolution": "Typhlosion",
+        "culturalImpact": "High"
+      },
+      {
+        "name": "Totodile",
+        "type": "water",
+        "number": 158,
+        "popularity": 40,
+        "inspiration": "Crocodile",
+        "finalEvolution": "Feraligatr",
+        "culturalImpact": "High"
+      }
+    ],
+    "mostChosen": "fire",
+    "winnerPopularity": 42
+  },
+  {
+    "generation": 3,
+    "region": "Hoenn",
+    "year": 2002,
+    "games": ["Ruby", "Sapphire", "Emerald"],
+    "starters": [
+      {
+        "name": "Treecko",
+        "type": "grass",
+        "number": 252,
+        "popularity": 28,
+        "inspiration": "Gecko",
+        "finalEvolution": "Sceptile",
+        "culturalImpact": "Medium"
+      },
+      {
+        "name": "Torchic",
+        "type": "fire",
+        "number": 255,
+        "popularity": 35,
+        "inspiration": "Chicken",
+        "finalEvolution": "Blaziken",
+        "culturalImpact": "Very High"
+      },
+      {
+        "name": "Mudkip",
+        "type": "water",
+        "number": 258,
+        "popularity": 37,
+        "inspiration": "Mudskipper + Axolotl",
+        "finalEvolution": "Swampert",
+        "culturalImpact": "Very High"
+      }
+    ],
+    "mostChosen": "water",
+    "winnerPopularity": 37
+  },
+  {
+    "generation": 4,
+    "region": "Sinnoh",
+    "year": 2006,
+    "games": ["Diamond", "Pearl", "Platinum"],
+    "starters": [
+      {
+        "name": "Turtwig",
+        "type": "grass",
+        "number": 387,
+        "popularity": 30,
+        "inspiration": "Turtle + Twig",
+        "finalEvolution": "Torterra",
+        "culturalImpact": "Medium"
+      },
+      {
+        "name": "Chimchar",
+        "type": "fire",
+        "number": 390,
+        "popularity": 40,
+        "inspiration": "Chimpanzee",
+        "finalEvolution": "Infernape",
+        "culturalImpact": "High"
+      },
+      {
+        "name": "Piplup",
+        "type": "water",
+        "number": 393,
+        "popularity": 30,
+        "inspiration": "Penguin",
+        "finalEvolution": "Empoleon",
+        "culturalImpact": "High"
+      }
+    ],
+    "mostChosen": "fire",
+    "winnerPopularity": 40
+  },
+  {
+    "generation": 5,
+    "region": "Unova",
+    "year": 2010,
+    "games": ["Black", "White", "Black 2", "White 2"],
+    "starters": [
+      {
+        "name": "Snivy",
+        "type": "grass",
+        "number": 495,
+        "popularity": 32,
+        "inspiration": "Snake + Ivy",
+        "finalEvolution": "Serperior",
+        "culturalImpact": "Medium"
+      },
+      {
+        "name": "Tepig",
+        "type": "fire",
+        "number": 498,
+        "popularity": 28,
+        "inspiration": "Pig",
+        "finalEvolution": "Emboar",
+        "culturalImpact": "Medium"
+      },
+      {
+        "name": "Oshawott",
+        "type": "water",
+        "number": 501,
+        "popularity": 40,
+        "inspiration": "Sea Otter",
+        "finalEvolution": "Samurott",
+        "culturalImpact": "High"
+      }
+    ],
+    "mostChosen": "water",
+    "winnerPopularity": 40
+  },
+  {
+    "generation": 6,
+    "region": "Kalos",
+    "year": 2013,
+    "games": ["X", "Y"],
+    "starters": [
+      {
+        "name": "Chespin",
+        "type": "grass",
+        "number": 650,
+        "popularity": 25,
+        "inspiration": "Hedgehog + Chestnut",
+        "finalEvolution": "Chesnaught",
+        "culturalImpact": "Medium"
+      },
+      {
+        "name": "Fennekin",
+        "type": "fire",
+        "number": 653,
+        "popularity": 38,
+        "inspiration": "Fennec Fox",
+        "finalEvolution": "Delphox",
+        "culturalImpact": "High"
+      },
+      {
+        "name": "Froakie",
+        "type": "water",
+        "number": 656,
+        "popularity": 37,
+        "inspiration": "Frog + Foam",
+        "finalEvolution": "Greninja",
+        "culturalImpact": "Very High"
+      }
+    ],
+    "mostChosen": "fire",
+    "winnerPopularity": 38
+  },
+  {
+    "generation": 7,
+    "region": "Alola",
+    "year": 2016,
+    "games": ["Sun", "Moon", "Ultra Sun", "Ultra Moon"],
+    "starters": [
+      {
+        "name": "Rowlet",
+        "type": "grass",
+        "number": 722,
+        "popularity": 42,
+        "inspiration": "Owl",
+        "finalEvolution": "Decidueye",
+        "culturalImpact": "Very High"
+      },
+      {
+        "name": "Litten",
+        "type": "fire",
+        "number": 725,
+        "popularity": 35,
+        "inspiration": "Cat",
+        "finalEvolution": "Incineroar",
+        "culturalImpact": "High"
+      },
+      {
+        "name": "Popplio",
+        "type": "water",
+        "number": 728,
+        "popularity": 23,
+        "inspiration": "Sea Lion + Clown",
+        "finalEvolution": "Primarina",
+        "culturalImpact": "Medium"
+      }
+    ],
+    "mostChosen": "grass",
+    "winnerPopularity": 42
+  },
+  {
+    "generation": 8,
+    "region": "Galar",
+    "year": 2019,
+    "games": ["Sword", "Shield"],
+    "starters": [
+      {
+        "name": "Grookey",
+        "type": "grass",
+        "number": 810,
+        "popularity": 30,
+        "inspiration": "Monkey + Grass",
+        "finalEvolution": "Rillaboom",
+        "culturalImpact": "Medium"
+      },
+      {
+        "name": "Scorbunny",
+        "type": "fire",
+        "number": 813,
+        "popularity": 40,
+        "inspiration": "Rabbit",
+        "finalEvolution": "Cinderace",
+        "culturalImpact": "High"
+      },
+      {
+        "name": "Sobble",
+        "type": "water",
+        "number": 816,
+        "popularity": 30,
+        "inspiration": "Chameleon + Water",
+        "finalEvolution": "Inteleon",
+        "culturalImpact": "Medium"
+      }
+    ],
+    "mostChosen": "fire",
+    "winnerPopularity": 40
+  },
+  {
+    "generation": 9,
+    "region": "Paldea",
+    "year": 2022,
+    "games": ["Scarlet", "Violet"],
+    "starters": [
+      {
+        "name": "Sprigatito",
+        "type": "grass",
+        "number": 906,
+        "popularity": 38,
+        "inspiration": "Cat + Grass",
+        "finalEvolution": "Meowscarada",
+        "culturalImpact": "High"
+      },
+      {
+        "name": "Fuecoco",
+        "type": "fire",
+        "number": 909,
+        "popularity": 42,
+        "inspiration": "Crocodile + Fire Pepper",
+        "finalEvolution": "Skeledirge",
+        "culturalImpact": "Very High"
+      },
+      {
+        "name": "Quaxly",
+        "type": "water",
+        "number": 912,
+        "popularity": 20,
+        "inspiration": "Duck + Water",
+        "finalEvolution": "Quaquaval",
+        "culturalImpact": "Medium"
+      }
+    ],
+    "mostChosen": "fire",
+    "winnerPopularity": 42
+  }
+]
