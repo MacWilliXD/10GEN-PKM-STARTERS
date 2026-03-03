@@ -64,8 +64,7 @@
             </div>
 
             <div class="chapter-header intro-hero">
-                <div class="hero-badge">🎮 POKÉMON PRESENTA</div>
-                <h2 class="chapter-title hero-title">📖 Una Nueva Aventura en Indonesia</h2>
+                <h2 class="chapter-title hero-title">Una Nueva Aventura en la 10ma Generación</h2>
                 <p class="chapter-subtitle hero-subtitle">La Décima Generación - Bienvenido a la Región de las Islas Tropicales</p>
                 <div class="reveal-date">
                     <span class="reveal-icon">🎉</span>
@@ -101,7 +100,7 @@
                             </p>
                         </div>
                         <p class="highlight-box">
-                            <strong>🎯 Nuestra Misión:</strong> Con solo 5 días desde el anuncio y basándonos en <strong>26 años 
+                            <strong>🎯 Nuestra Misión:</strong> Con solo 5 días desde el anuncio y basándonos en <strong>30 años 
                             de historia Pokémon</strong>, 26,407 votos reales de encuestas y análisis predictivo avanzado, 
                             determinaremos científicamente cuál starter conquistará el corazón de millones de entrenadores.
                         </p>
@@ -134,36 +133,6 @@
                     <p class="image-caption">Los tres starters de Pokémon Viento y Oleaje</p>
                 </div>
 
-                <div class="methodology-box-enhanced">
-                    <h3>📊 Nuestra Metodología de Análisis</h3>
-                    <div class="method-grid">
-                        <div class="method-item">
-                            <span class="method-icon">📈</span>
-                            <h4>Análisis Histórico</h4>
-                            <p>Estudiamos 9 generaciones de patrones de popularidad</p>
-                        </div>
-                        <div class="method-item">
-                            <span class="method-icon">🔍</span>
-                            <h4>Tendencias Actuales</h4>
-                            <p>Evaluamos el interés de búsqueda y engagement en redes</p>
-                        </div>
-                        <div class="method-item">
-                            <span class="method-icon">🗳️</span>
-                            <h4>Encuestas Reales</h4>
-                            <p>Reddit Survey con 26,407 votos reales de jugadores (Gen 1-9)</p>
-                        </div>
-                        <div class="method-item">
-                            <span class="method-icon">🐾</span>
-                            <h4>Factor Cultural</h4>
-                            <p>Consideramos la conexión con Indonesia y popularidad animal</p>
-                        </div>
-                        <div class="method-item">
-                            <span class="method-icon">🎲</span>
-                            <h4>Simulación Monte Carlo</h4>
-                            <p>10,000 iteraciones para refinar probabilidades</p>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <button class="next-chapter-btn" onclick="navigateToSection('presentation')">
@@ -452,7 +421,7 @@
         <section class="story-section" id="section-history">
             <div class="chapter-header">
                 <h2 class="chapter-title">📚 Capítulo 4: Lecciones del Pasado</h2>
-                <p class="chapter-subtitle">26 años de datos revelan patrones claros</p>
+                <p class="chapter-subtitle">30 años de datos revelan patrones claros</p>
             </div>
 
             <div class="story-content">
@@ -919,7 +888,6 @@
                             <div class="rank-badge gold">🥇</div>
                             <img src="../images/starters/pombon.jpg" alt="Pombon" class="winner-img">
                             <h4>Pombon</h4>
-                            <div class="final-probability" id="final-pombon">Calculando...</div>
                             <p class="prediction-label">GANADOR PROYECTADO</p>
                         </div>
 
@@ -927,7 +895,6 @@
                             <div class="rank-badge silver">🥈</div>
                             <img src="../images/starters/gecua.jpg" alt="Gecqua" class="second-img">
                             <h4>Gecqua</h4>
-                            <div class="final-probability" id="final-gecqua">Calculando...</div>
                             <p class="prediction-label">SEGUNDO LUGAR</p>
                         </div>
 
@@ -935,7 +902,6 @@
                             <div class="rank-badge bronze">🥉</div>
                             <img src="../images/starters/browt.jpg" alt="Browt" class="third-img">
                             <h4>Browt</h4>
-                            <div class="final-probability" id="final-browt">Calculando...</div>
                             <p class="prediction-label">TERCER LUGAR</p>
                         </div>
                     </div>
@@ -1001,7 +967,6 @@
                     <div class="action-buttons">
                         <button id="exportBtn" class="btn btn-success">📥 Descargar Informe Completo (JSON)</button>
                         <button id="compareBtn" class="btn btn-info">📈 Comparar con Otras Generaciones</button>
-                        <button id="saveSimulationBtn" class="btn btn-primary">💾 Guardar Esta Simulación</button>
                     </div>
                 </div>
 
@@ -1016,9 +981,6 @@
                 <!-- Historial -->
                 <div class="history-section-inline">
                     <h3>🕒 Historial de Simulaciones</h3>
-                    <div class="history-controls">
-                        <button id="clearHistoryBtn" class="btn btn-danger">🗑️ Limpiar Historial</button>
-                    </div>
                     <div id="simulationHistory" class="simulation-history">
                         <!-- Se llenará dinámicamente -->
                     </div>
@@ -1054,6 +1016,9 @@
     <!-- Bibliotecas para generar PDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Plugin para mostrar valores en gráficas -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
     
     <script src="../js/config.js"></script>
     <script src="../js/api.js"></script>

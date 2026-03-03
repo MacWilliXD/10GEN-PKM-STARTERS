@@ -534,7 +534,7 @@ body::before {
 }
 
 .chart-container canvas {
-    max-height: 300px;
+    max-height: 420px;
 }
 
 /* ============================================

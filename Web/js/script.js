@@ -88,6 +88,12 @@ async function runInitialAnalysis() {
             throw new Error('Chart.js no está cargado. Verifica tu conexión a internet.');
         }
         
+        // Registrar plugin de datalabels
+        if (typeof ChartDataLabels !== 'undefined') {
+            Chart.register(ChartDataLabels);
+            console.log('✅ Plugin ChartDataLabels registrado');
+        }
+        
         // Ejecutar predicción
         console.log('🔮 Iniciando predicción...');
         const prediction = await predictiveAnalysis.predictMostChosen();
@@ -210,6 +216,17 @@ function createPredictionChart(probabilities) {
             responsive: true,
             maintainAspectRatio: true,
             plugins: {
+                datalabels: {
+                    display: true,
+                    color: '#fff',
+                    font: {
+                        weight: 'bold',
+                        size: 14
+                    },
+                    formatter: (value) => {
+                        return value.toFixed(1) + '%';
+                    }
+                },
                 legend: {
                     position: 'bottom',
                     labels: {
@@ -264,6 +281,19 @@ function createHistoricalChart(historicalData) {
             responsive: true,
             maintainAspectRatio: true,
             plugins: {
+                datalabels: {
+                    display: true,
+                    anchor: 'center',
+                    align: 'center',
+                    color: '#fff',
+                    font: {
+                        weight: 'bold',
+                        size: 13
+                    },
+                    formatter: (value) => {
+                        return value;
+                    }
+                },
                 legend: { display: false },
                 tooltip: {
                     callbacks: {
@@ -340,6 +370,18 @@ function createFactorsChart(scores) {
             responsive: true,
             maintainAspectRatio: true,
             plugins: {
+                datalabels: {
+                    display: true,
+                    color: '#333',
+                    font: {
+                        weight: 'bold',
+                        size: 11
+                    },
+                    offset: -5,
+                    formatter: (value) => {
+                        return value.toFixed(0);
+                    }
+                },
                 legend: {
                     position: 'bottom'
                 }
@@ -371,7 +413,9 @@ function createTrendsChart(trendsData) {
                     borderColor: '#78C850',
                     backgroundColor: 'rgba(120, 200, 80, 0.1)',
                     tension: 0.4,
-                    fill: true
+                    fill: true,
+                    pointRadius: 5,
+                    pointBackgroundColor: '#78C850'
                 },
                 {
                     label: 'Pombon',
@@ -379,7 +423,9 @@ function createTrendsChart(trendsData) {
                     borderColor: '#F08030',
                     backgroundColor: 'rgba(240, 128, 48, 0.1)',
                     tension: 0.4,
-                    fill: true
+                    fill: true,
+                    pointRadius: 5,
+                    pointBackgroundColor: '#F08030'
                 },
                 {
                     label: 'Gecqua',
@@ -387,7 +433,9 @@ function createTrendsChart(trendsData) {
                     borderColor: '#6890F0',
                     backgroundColor: 'rgba(104, 144, 240, 0.1)',
                     tension: 0.4,
-                    fill: true
+                    fill: true,
+                    pointRadius: 5,
+                    pointBackgroundColor: '#6890F0'
                 }
             ]
         },
@@ -395,6 +443,19 @@ function createTrendsChart(trendsData) {
             responsive: true,
             maintainAspectRatio: true,
             plugins: {
+                datalabels: {
+                    display: true,
+                    anchor: 'end',
+                    align: 'top',
+                    color: '#333',
+                    font: {
+                        weight: 'bold',
+                        size: 11
+                    },
+                    formatter: (value) => {
+                        return value;
+                    }
+                },
                 legend: {
                     position: 'bottom'
                 }
@@ -900,6 +961,19 @@ async function createInspirationChart() {
             responsive: true,
             maintainAspectRatio: true,
             plugins: {
+                datalabels: {
+                    display: true,
+                    anchor: 'end',
+                    align: 'top',
+                    color: '#333',
+                    font: {
+                        weight: 'bold',
+                        size: 12
+                    },
+                    formatter: (value) => {
+                        return value;
+                    }
+                },
                 legend: {
                     display: true,
                     position: 'top'
@@ -982,7 +1056,9 @@ async function createHistoricalEvolutionChart() {
                     borderColor: 'rgba(255, 87, 34, 1)',
                     backgroundColor: 'rgba(255, 87, 34, 0.1)',
                     tension: 0.4,
-                    fill: true
+                    fill: true,
+                    pointRadius: 5,
+                    pointBackgroundColor: 'rgba(255, 87, 34, 1)'
                 },
                 {
                     label: 'Tipo Agua 💧',
@@ -990,7 +1066,9 @@ async function createHistoricalEvolutionChart() {
                     borderColor: 'rgba(33, 150, 243, 1)',
                     backgroundColor: 'rgba(33, 150, 243, 0.1)',
                     tension: 0.4,
-                    fill: true
+                    fill: true,
+                    pointRadius: 5,
+                    pointBackgroundColor: 'rgba(33, 150, 243, 1)'
                 },
                 {
                     label: 'Tipo Planta 🌱',
@@ -998,7 +1076,9 @@ async function createHistoricalEvolutionChart() {
                     borderColor: 'rgba(76, 175, 80, 1)',
                     backgroundColor: 'rgba(76, 175, 80, 0.1)',
                     tension: 0.4,
-                    fill: true
+                    fill: true,
+                    pointRadius: 5,
+                    pointBackgroundColor: 'rgba(76, 175, 80, 1)'
                 }
             ]
         },
@@ -1006,6 +1086,20 @@ async function createHistoricalEvolutionChart() {
             responsive: true,
             maintainAspectRatio: true,
             plugins: {
+                datalabels: {
+                    display: true,
+                    anchor: 'end',
+                    align: 'top',
+                    offset: -5,
+                    color: '#333',
+                    font: {
+                        weight: 'bold',
+                        size: 10
+                    },
+                    formatter: (value) => {
+                        return value + '%';
+                    }
+                },
                 legend: {
                     display: true,
                     position: 'top'
