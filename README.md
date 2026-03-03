@@ -463,7 +463,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 ```
 MIT License
 
-Copyright (c) 2026 [Tu Nombre]
+Copyright (c) 2026 [MacWilliXD]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -474,7 +474,7 @@ in the Software without restriction...
 
 ## 👨‍💻 Autor
 
-**[Tu Nombre]**
+**[MacWilliXD]**
 
 - GitHub: [@TU_USUARIO](https://github.com/TU_USUARIO)
 - LinkedIn: [Tu LinkedIn](https://linkedin.com/in/tu-perfil)
@@ -514,7 +514,7 @@ Puedes modificar los colores, animaciones y textos editando:
 
 ### ⭐ Si te gustó este proyecto, dale una estrella ⭐
 
-**Made with ❤️ and 🔥💧🌱 by [Tu Nombre]**
+**Made with ❤️ and 🔥💧🌱 by [MacWilliXD]**
 
 [⬆ Volver arriba](#-pokémon-viento-y-oleaje---predictor-de-starter-más-popular)
 
