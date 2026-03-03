@@ -78,11 +78,19 @@ class PredictiveAnalysis {
 
             // Aplicar simulación Monte Carlo para refinar
             console.log('🎲 Ejecutando Monte Carlo (10,000 iteraciones)...');
-            const monteCarloResults = this.monteCarloSimulation(probabilities, 10000);
+            let monteCarloResults = this.monteCarloSimulation(probabilities, 10000);
             console.log('✅ Monte Carlo completado:', monteCarloResults);
 
-            // Generar explicación detallada
-            const explanation = this.generateExplanation(scores, probabilities, historicalData);
+            // ⭐ REDONDEAR VALORES A 2 DECIMALES (FUENTE ÚNICA DE VERDAD)
+            monteCarloResults = {
+                browt: parseFloat(monteCarloResults.browt).toFixed(2),
+                pombon: parseFloat(monteCarloResults.pombon).toFixed(2),
+                gecqua: parseFloat(monteCarloResults.gecqua).toFixed(2)
+            };
+            console.log('🎯 Valores redondeados:', monteCarloResults);
+
+            // Generar explicación detallada usando los valores redondeados
+            const explanation = this.generateExplanation(scores, monteCarloResults, historicalData);
 
             this.currentPrediction = {
                 scores,
@@ -300,7 +308,7 @@ class PredictiveAnalysis {
         explanation += `• Promedio en encuestas: ${scores[winner].breakdown.polls.toFixed(1)}/100<br>`;
         explanation += `• Relevancia cultural indonesia: ${scores[winner].breakdown.culture.toFixed(1)}/100<br><br>`;
         
-        explanation += `<strong>Desglose de Probabilidades:</strong><br>`;
+        explanation += `<strong>Desglose de Probabilidades (VALORES FINALES):</strong><br>`;
         explanation += `🌱 Browt (Planta): ${probabilities.browt}%<br>`;
         explanation += `🔥 Pombon (Fuego): ${probabilities.pombon}%<br>`;
         explanation += `💧 Gecqua (Agua): ${probabilities.gecqua}%<br>`;

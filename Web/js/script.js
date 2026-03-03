@@ -6,6 +6,7 @@
 // Variables globales
 let charts = {};
 let simulationHistory = [];
+let currentPredictionData = null;  // ⭐ FUENTE ÚNICA DE VERDAD: Almacena la predicción principal
 
 // Inicialización de la aplicación
 document.addEventListener('DOMContentLoaded', async () => {
@@ -99,6 +100,10 @@ async function runInitialAnalysis() {
         const prediction = await predictiveAnalysis.predictMostChosen();
         console.log('✅ Predicción completada:', prediction);
         
+        // ⭐ GUARDAR EN VARIABLE GLOBAL (FUENTE ÚNICA DE VERDAD)
+        currentPredictionData = prediction;
+        console.log('💾 Predicción guardada como fuente única de verdad');
+        
         // Actualizar UI con resultados
         console.log('🎨 Actualizando interfaz...');
         updatePredictionUI(prediction);
@@ -136,6 +141,7 @@ function updatePredictionUI(prediction) {
     
     starters.forEach(starter => {
         const element = document.getElementById(`prediction-${starter}`);
+        // Los valores ya están redondeados en prediction.probabilities
         const probability = prediction.probabilities[starter];
         const score = prediction.scores[starter];
         
@@ -160,7 +166,7 @@ function updatePredictionUI(prediction) {
         winnerCard.classList.add('winner', 'pulse');
     }
     
-    // Actualizar conclusión
+    // Actualizar conclusión (ya contiene valores redondeados)
     document.getElementById('conclusion').innerHTML = prediction.explanation;
 }
 
@@ -193,16 +199,17 @@ async function createCharts(prediction) {
 function createPredictionChart(probabilities) {
     const ctx = document.getElementById('predictionChart').getContext('2d');
     
+    // Convertir a números para la gráfica
+    const brownProb = parseFloat(probabilities.browt);
+    const pombonProb = parseFloat(probabilities.pombon);
+    const gecquaProb = parseFloat(probabilities.gecqua);
+    
     return new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: ['🌱 Browt', '🔥 Pombon', '💧 Gecqua'],
             datasets: [{
-                data: [
-                    parseFloat(probabilities.browt),
-                    parseFloat(probabilities.pombon),
-                    parseFloat(probabilities.gecqua)
-                ],
+                data: [brownProb, pombonProb, gecquaProb],
                 backgroundColor: [
                     '#78C850',
                     '#F08030',
@@ -224,7 +231,7 @@ function createPredictionChart(probabilities) {
                         size: 14
                     },
                     formatter: (value) => {
-                        return value.toFixed(1) + '%';
+                        return value.toFixed(2) + '%';
                     }
                 },
                 legend: {
@@ -237,7 +244,7 @@ function createPredictionChart(probabilities) {
                 tooltip: {
                     callbacks: {
                         label: function(context) {
-                            return context.label + ': ' + context.parsed + '%';
+                            return context.label + ': ' + context.parsed.toFixed(2) + '%';
                         }
                     }
                 }
@@ -627,7 +634,8 @@ async function toggleComparison() {
  */
 function saveCurrentSimulation() {
     try {
-        const prediction = predictiveAnalysis.currentPrediction;
+        // ⭐ Usar siempre la predicción guardada (fuente única de verdad)
+        const prediction = currentPredictionData || predictiveAnalysis.currentPrediction;
         if (!prediction) {
             alert('No hay predicción para guardar');
             return;
